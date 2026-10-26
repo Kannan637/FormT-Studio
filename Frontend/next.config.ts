@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 const nextConfig: NextConfig = {
+  output: "export",
   /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     root: path.resolve(__dirname),
     rules: {
@@ -15,6 +14,7 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
